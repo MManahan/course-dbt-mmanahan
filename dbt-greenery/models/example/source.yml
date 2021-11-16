@@ -1,0 +1,44 @@
+version: 2
+
+sources:
+  - name: greenery_users
+    database: dbt
+    schema: public
+    tables:
+      - name: users
+
+  - name: greenery_addresses
+    database: dbt
+    schema: public
+    tables:
+      - name: addresses
+
+  - name: greenery_events
+    database: dbt
+    schema: public
+    tables:
+      - name: events
+
+  - name: greenery_orders
+    database: dbt
+    schema: public
+    tables:
+      - name: orders
+
+  - name: greenery_order_items
+    database: dbt
+    schema: public
+    tables:
+      - name: order_items
+
+  - name: greenery_products
+    database: dbt
+    schema: public
+    tables:
+      - name: products
+
+  - name: greenery_promos
+    database: dbt
+    schema: public
+    tables:
+      - name: promos
