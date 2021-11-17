@@ -4,4 +4,10 @@
   )
 }}
 
-SELECT * FROM {{ source('greenery_promos', 'promos') }}
+SELECT
+        id,
+        promo_id,
+        discout as discount,
+        status
+
+FROM {{ source('greenery_promos', 'promos') }}
