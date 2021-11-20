@@ -11,12 +11,16 @@
 
 ### On average, how many orders do we receive per hour?
 
-*17*
+*8.51*
 		
 		select 
-			round(count(order_id)/date_part('hours', MAX(created_at) - MIN(created_at))) 
+        		count(order_id) /
+        		(
+        		date_part('days', max(created_at) - min(created_at))*24 +
+        		date_part('hours', max(created_at) - min(created_at))
+        		)
 		from 
-			stg_orders_table
+				"stg_orders_table"
 
 ### On average, how long does an order take from being placed to being delivered?
 
