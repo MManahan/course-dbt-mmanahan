@@ -16,8 +16,8 @@
 		select 
         		count(order_id) /
         		(
-        		date_part('days', max(created_at) - min(created_at))*24 +
-        		date_part('hours', max(created_at) - min(created_at))
+        		date_part('days', max(created_at_orders) - min(created_at_orders))*24 +
+        		date_part('hours', max(created_at_orders) - min(created_at_orders))
         		)
 		from 
 				"stg_orders_table"
@@ -27,11 +27,11 @@
 { "days": 3, "hours": 22, "minutes": 13, "seconds": 10, "milliseconds": 504.451 }
 
 		select 
-			AVG(delivered_at - created_at)
+			AVG(delivered_at - created_at_orders)
 		from 
 			stg_orders_table
 		where 
-			status = 'delivered'
+			status_orders = 'delivered'
 
 ### How many users have only made one purchase? Two purchases? Three+ purchases?
 
@@ -65,6 +65,6 @@
 
 *0.1139*
 
-	select count(DISTINCT(session_id))/(Date_Part('days',MAX(created_at) - MIN(created_at))*24 
-			+ Date_Part('hours',MAX(created_at) - MIN(created_at))) 
+	select count(DISTINCT(session_id))/(Date_Part('days',MAX(created_at_events) - MIN(created_at_events))*24 
+			+ Date_Part('hours',MAX(created_at_events) - MIN(created_at_events))) 
 	from stg_events_table
