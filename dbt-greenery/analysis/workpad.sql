@@ -27,6 +27,5 @@ FROM
 )
 
 select round((count_repeat::decimal / count_all)*100,1) from repeat_users
-åç
 
 
