@@ -1,3 +1,5 @@
+-- Rate of Repeat Users 
+
 with user_orders as (
 select 
         u.user_id, 
@@ -6,22 +8,25 @@ select
 from 
         "stg_users_table" as u
 
-join    "stg_orders_table" as o
+left join    "stg_orders_table" as o
 
 on      u.user_id = o.user_id
 
-group by u.user_id
+group by u.user_idå
+
+having count(o.order_id) > 0
 ),
 
 repeat_users as (
 
 select 
-        sum(case when count_of_orders  > 1 then 1 else null end) as count_repeat,
-        count(*) as count_all
+        count(case when count_of_orders > 1 then 1 else null end) as count_repeat,
+        count(case when count_of_orders > 0 then 1 else null end) as count_all
 FROM
         user_orders
 )
 
-select * from repeat_users
+select round((count_repeat::decimal / count_all)*100,1) from repeat_users
+åç
 
-select * from stg_orders_table
+
