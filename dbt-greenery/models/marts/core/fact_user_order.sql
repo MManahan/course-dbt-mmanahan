@@ -11,7 +11,8 @@ SELECT
         first_name,
         last_name,
         count(order_id) as num_orders,
-        sum(order_total) as ordered_total
+        sum(order_total) as ordered_total,
+        round(cast(sum(order_total) / count(order_id) as numeric),2) as dollars_per_order
 
 FROM 
 
