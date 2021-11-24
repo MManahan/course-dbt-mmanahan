@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: user_orders__joined
+    description: "Int model joining users and orders table"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null

@@ -20,7 +20,7 @@ renamed as (
         created_at as created_at_orders,
         order_cost,
         shipping_cost,
-        order_total,
+        round(cast (order_total as numeric),2) as order_total,
         tracking_id,
         shipping_service,
         estimated_delivery_at,
