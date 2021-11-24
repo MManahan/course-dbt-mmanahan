@@ -45,6 +45,8 @@ models:
           - not_null
       - name: address
       - name: zipcode
+        tests:
+          - zipcode_five_digit
       - name: state
       - name: country
 
