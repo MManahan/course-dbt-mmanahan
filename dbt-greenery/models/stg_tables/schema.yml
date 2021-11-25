@@ -77,6 +77,8 @@ models:
       - name: order_cost
       - name: shipping_cost
       - name: order_total
+        tests:
+          - positive_values
       - name: tracking_id
       - name: shipping_service
       - name: estimated_delivery_at
