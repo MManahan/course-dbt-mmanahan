@@ -19,7 +19,7 @@ select
         o.order_id,
         o.user_id,
         o.order_total,
-        o.promo_id,
+        coalesce(o.promo_id,'No Promo') as promo_id,
         coalesce(p.discount,0) as discount
 from 
         orders as o
