@@ -55,10 +55,18 @@ If we had more data, what features would we want to see:
 
 ### Explain the marts models you added. Why did you organize the models in the way you did?
 
- - Core
- - Marketing
- - Product
+ - Core : Has int models to join users with addresses table and users with orders table. This resulted in a dim table providing users and their location (grouped by state) in order to provide a table detailing the location of users. There is also a int model to join users and orders table to create a fact table providing the number of orders, sum of order_total and cost/order aggregated at the user level. This will help answer which users have ordered the most items and the amount of money they spent per order
+
+ - Marketing : Has an int model to join order_items and products which needed to be combined anyway if you wanted to see which products each user buys. I also have an int model to join the orders and promos model. These int models provided fact tables to find the products and promos aggregated to the order level. 
+
+ - Product : Has an int model to aggregate the different event types to the user level. This is then joined with the user table to create a fact table to show how each user is behaving on the website. 
+
+ ### DAG
+
+ ![DAG](https://github.com/MManahan/course-dbt-mmanahan/blob/main/dbt-greenery/Answers_To_Questions/Manahan%20-%20DAG.png?raw=true)
 
  ## Part 2
 
  ### What assumptions are you making about each model? (i.e. why are you adding each test?)
+
+ I am making the assumption that we want the highest quality data. 
