@@ -47,6 +47,7 @@ models:
       - name: zipcode
         tests:
           - zipcode_five_digit
+        description: "Some zipcodes only had 4 digits"
       - name: state
       - name: country
 
@@ -79,6 +80,7 @@ models:
       - name: order_total
         tests:
           - positive_values
+        description: "There was one order_total that was negative"
       - name: tracking_id
       - name: shipping_service
       - name: estimated_delivery_at
