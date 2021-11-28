@@ -69,4 +69,12 @@ If we had more data, what features would we want to see:
 
  ### What assumptions are you making about each model? (i.e. why are you adding each test?)
 
- I am making the assumption that we want the highest quality data. 
+ The tests I implemented are all on the staging models. If I found any issues in the int or dim/fact models, I added a test to the stage models assuming that the data gets caught earlier so the product team can work on how the data is collected. 
+
+ ### Did you find any “bad” data as you added and ran tests on your models? How did you go about either cleaning the data in the dbt model or adjusting your assumptions/tests?
+
+ Yes. For order_total on the orders table, there was one order that had a negative value. This made me add a poistive_values test to the orders staging model. I would need to talk to the product group to see if there was a reason a negative number was allowed to come through. I also found that there were some zip codes in the addresses table that failed to be 5 digits. I added a test to the addresses staging table to check to see if they were 5 digits. I did not make any changes/corrections for the model. I feel like these issues need to be handled upstream.
+
+ ### Your stakeholders at Greenery want to understand the state of the data each day. Explain how you would ensure these tests are passing regularly and how you would alert stakeholders about bad data getting through.
+
+ The models will still run to provide the data, but there needs to be an exception report resulting from the failures found during the tests. Since our tests are sql queries that get the rows that failure the critiria, the results of those tests/queries can be published on a dashboard for the product/engineering team to address. This can be done by running the models and testing them everyday and publishing the results on a dashboard. 
