@@ -32,7 +32,9 @@ models:
       - name: last_name
       - name: email
       - name: phone_number
-      - name: created_at
+      - name: created_at_users
+        tests: 
+          - not null
       - name: updated_at
       - name: address_id
 
@@ -62,7 +64,9 @@ models:
       - name: user_id
       - name: event_type
       - name: page_url
-      - name: created_at
+      - name: created_at_events
+        tests:
+          - not null
 
   - name: stg_orders_table
     description: "A staging table for orders"
@@ -74,7 +78,9 @@ models:
       - name: promo_id
       - name: user_id
       - name: address_id
-      - name: created_at
+      - name: created_at_orders
+        tests:
+          - not_null
       - name: order_cost
       - name: shipping_cost
       - name: order_total
@@ -85,7 +91,7 @@ models:
       - name: shipping_service
       - name: estimated_delivery_at
       - name: delivered_at
-      - name: status
+      - name: status_orders
 
   - name: stg_order_items_table
     description: "A staging table for orders_items"
@@ -117,7 +123,7 @@ models:
           - unique
           - not_null
       - name: discount
-      - name: status
+      - name: status_promo
 
 
 
