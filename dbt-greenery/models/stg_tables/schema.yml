@@ -34,7 +34,7 @@ models:
       - name: phone_number
       - name: created_at_users
         tests: 
-          - not null
+          - not_null
       - name: updated_at
       - name: address_id
 
@@ -66,7 +66,7 @@ models:
       - name: page_url
       - name: created_at_events
         tests:
-          - not null
+          - not_null
 
   - name: stg_orders_table
     description: "A staging table for orders"
