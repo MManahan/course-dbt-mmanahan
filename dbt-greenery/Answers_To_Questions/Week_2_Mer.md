@@ -1,4 +1,6 @@
-# Questions
+# Week 2 Questions
+
+## Part 1
 
 ### What is our user repeat rate?
 *80.5%*
@@ -50,3 +52,13 @@ If we had more data, what features would we want to see:
 - We can probably try to categorize these customers based on whether or not they buy for themselves or others  by shipping address
 - We can also probably try to keep track of which plants the customer orders 
 - I'd also want give these repeat customers a referral discount code to see if they get used to gain insight on how happy they are with the product.
+
+### Explain the marts models you added. Why did you organize the models in the way you did?
+
+ - Core
+ - Marketing
+ - Product
+
+ ## Part 2
+
+ ### What assumptions are you making about each model? (i.e. why are you adding each test?)
