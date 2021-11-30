@@ -17,6 +17,7 @@ renamed as (
         session_id,
         user_id,
         page_url,
+        substring(page_url,30) as product_id,
         created_at as created_at_events,
         event_type
 

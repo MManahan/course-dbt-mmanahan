@@ -64,6 +64,7 @@ models:
       - name: user_id
       - name: event_type
       - name: page_url
+      - name: product_id
       - name: created_at_events
         tests:
           - not_null
