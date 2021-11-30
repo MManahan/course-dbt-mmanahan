@@ -6,4 +6,50 @@ models:
     columns:
       - name: user_id
         description: "The primary key for this table"
+      - name: first_name
+      - name: last_name
+      - name: email
+      - name: order_id
+      - name: created_at_orders
+        description: "Date order was created"
+      - name: order_total
+        description: "Order total aggregated to the user level"
+
+  - name: user_addresses_joined
+    description: "Int model joining users and addresses table"
+    columns:
+      - name: user_id
+        description: "The primary key for this table"
+      - name: first_name
+      - name: last_name
+      - name: created_at_users
+        description: "The date the user account was created"
+      - name: address
+      - name: zipcode
+      - name: state
+      - name: country
+
+  - name: dim_user_location
+    description: "dimension table providing the users grouped by state"
+    columns:
+      - name: state
+      - name: user_id
+      - name: first_name
+      - name: last_name
+
+  - name: fact_user_order
+    description: "fact table providing order details agg to user level"
+    columns:
+      - name: user_id
+      - name: first_name
+      - name: last_name
+      - name: num_orders
+        description: "number of orders agg to the user"
+      - name: ordered_total
+        description: "sum of money spent on orders"
+      - name: dollars_per_order
+
+
+
+
   

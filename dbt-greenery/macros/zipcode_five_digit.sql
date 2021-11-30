@@ -4,7 +4,7 @@
 
    select *
    from {{ model }}
-   where {{ column_name }} < 10000 and > 99999
+   where {{ column_name }} > 9999 and {{ column_name }} < 99999
 
 
 {% endtest %}
