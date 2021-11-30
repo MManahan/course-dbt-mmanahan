@@ -6,3 +6,10 @@ from
         "stg_events_table"
 group by 
         user_id
+
+-- use the below code to extract product_id from URL
+
+select 
+        substring(page_url,30) as product_id
+from 
+        "stg_events_table"
