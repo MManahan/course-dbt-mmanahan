@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: fact_user_events
+    description: "Fact model joining users to event types"
+    columns:
+      - name: user_id
+        description: "The primary key for this table"
+      - name: first_name
+      - name: last_name
+      - name: Add_to_Cart
+      - name: Checkout
+      - name: Delete_from_Cart
+      - name: Package_Shipped
+      - name: Page_View
+      - name: Account_Created
+    

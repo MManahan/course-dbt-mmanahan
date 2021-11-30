@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: int_events__grouped
+    description: "Int model agg count of event types at user level"
+    columns:
+      - name: user_id
+        description: "The primary key for this table"
+      - name: Add_to_Cart
+      - name: Checkout
+      - name: Delete_from_Cart
+      - name: Package_Shipped
+      - name: Page_View
+      - name: Account_Created
+    

@@ -1,0 +1,21 @@
+version: 2
+
+models:
+ 
+  - name: order_promos_joined
+    description: "table linking promos to orders and users"
+    columns:
+      - name: order_id
+      - name: user_id
+      - name: order_total
+      - name: promo_id 
+      - name: discount
+
+  - name: order_items_products__joined
+    description: "table linking order items and the products associated with them"
+    columns:
+      - name: order_id
+      - name: product_id
+      - name: name
+      - name: price
+      - name: quanitity

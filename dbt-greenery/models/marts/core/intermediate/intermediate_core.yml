@@ -29,25 +29,6 @@ models:
       - name: state
       - name: country
 
-  - name: dim_user_location
-    description: "dimension table providing the users grouped by state"
-    columns:
-      - name: state
-      - name: user_id
-      - name: first_name
-      - name: last_name
-
-  - name: fact_user_order
-    description: "fact table providing order details agg to user level"
-    columns:
-      - name: user_id
-      - name: first_name
-      - name: last_name
-      - name: num_orders
-        description: "number of orders agg to the user"
-      - name: ordered_total
-        description: "sum of money spent on orders"
-      - name: dollars_per_order
 
 
 

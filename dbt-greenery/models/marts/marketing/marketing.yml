@@ -1,0 +1,18 @@
+version: 2
+
+models:
+ 
+  - name: fact_orders_by_promos
+    description: "fact table providing the num of orders and total cost at promo level"
+    columns:
+      - name: promo_id
+      - name: num_orders
+      - name: order_total
+
+  - name: fact_orders_by_product
+    description: "agg num of orders at product level"
+    columns:
+      - name: name
+        description: "Name of product"
+      - name: num_orders
+
