@@ -1,6 +1,8 @@
-# Analytics engineering with dbt
+# dbt course through Co:Rise
 
-Template repository for the projects and environment of the course: Analytics engineering with dbt
+This is my repo on project based learning how to use dbt in building models
+
+
 
 ## License
 
