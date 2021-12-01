@@ -32,5 +32,11 @@ from sessions_w_product_id as s
 join {{ref('stg_products_table')}} as p 
 on
       s.product_id = p.product_id
+group by
+      s.session_id,
+      s.product_id,
+      p.name
+order by
+      s.session_id
 
 
