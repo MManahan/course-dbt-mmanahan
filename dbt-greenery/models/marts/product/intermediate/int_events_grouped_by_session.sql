@@ -24,3 +24,4 @@ from
 
 group by 
       session_id
+ 
