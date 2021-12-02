@@ -4,7 +4,7 @@
   )
 }}
 
-with session_w_product_id as (
+with events as (
 
     select * from {{ref('stg_events_table')}}
 
@@ -17,7 +17,7 @@ select
       event_type
 
 from 
-      session_w_product_id
+      events
 group by 
       session_id,
       product_id,
