@@ -8,6 +8,7 @@ with fact_orders_by_product_table as (
 
 SELECT 
         name,
+        product_id,
         count(order_id) as num_orders
 
 FROM 
@@ -16,7 +17,8 @@ FROM
 
 GROUP BY
 
-        name
+        name,
+        product_id
 
 ORDER BY
         num_orders DESC
