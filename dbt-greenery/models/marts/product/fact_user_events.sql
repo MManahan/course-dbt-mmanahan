@@ -20,12 +20,12 @@ select
         u.user_id,
         u.first_name,
         u.last_name,
-        e.Add_to_Cart,
-        e.Checkout,
-        e.Delete_from_Cart,
-        e.Package_Shipped,
-        e.Page_View,
-        e.Account_Created
+        e.add_to_cart,
+        e.checkout,
+        e.delete_from_cart,
+        e.package_shipped,
+        e.page_View,
+        e.account_created
 from 
         users as u
 

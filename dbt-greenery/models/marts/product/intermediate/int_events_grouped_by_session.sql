@@ -18,7 +18,7 @@ with events as (
 select 
       session_id,
       {%- for event_type in event_types %}
-      count(case when event_type = '{{event_type}}' then event_id end) as count_of_{{event_type}}
+      sum(case when event_type = '{{event_type}}' then 1 else 0 end) as {{event_type}}
       {%- if not loop.last %},{% endif -%}
       {% endfor %}
 
