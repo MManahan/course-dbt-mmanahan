@@ -12,7 +12,7 @@ with events as (
 
 select 
       session_id,
-      {{get_column_values('event_type', {{ref('stg_events_table')}})}}
+      {{get_column_values('event_type', ref('stg_events_table'))}}
 --      sum(CASE WHEN event_type = 'add_to_cart' then 1 ELSE NULL END) as Add_to_Cart,
 --      sum(CASE WHEN event_type = 'checkout' then 1 ELSE NULL END) as Checkout,
 --      sum(CASE WHEN event_type = 'delete_from_cart' then 1 ELSE NULL END) as Delete_from_Cart,
