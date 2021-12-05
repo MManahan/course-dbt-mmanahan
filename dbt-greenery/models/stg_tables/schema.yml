@@ -63,6 +63,9 @@ models:
       - name: session_id
       - name: user_id
       - name: event_type
+        tests:
+          - dbt_expectations.expect_column_distinct_count_to_equal:
+              value: 6
       - name: page_url
       - name: product_id
       - name: created_at_events
