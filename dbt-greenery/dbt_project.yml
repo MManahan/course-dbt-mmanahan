@@ -36,3 +36,11 @@ models:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
+
+  dbt-greenery:
+
+    post-hook: 
+      - "{{ grant_select(role='reporting') }}"
+
+on-run-end:
+    - grant usage on schema {{schema}} to reporting;
