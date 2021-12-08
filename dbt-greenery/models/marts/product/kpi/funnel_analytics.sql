@@ -39,4 +39,10 @@ final_table as (
     FROM
         agg_table
 )
-select * from final_table
+SELECT
+    num_sessions as total_sessions
+     , round(((num_sessions-page_views)/num_sessions::decimal)*100,2) as dropoff_session_to_pv_percentage
+     , round(((page_views-add_to_carts)/page_views::decimal)*100,2) as dropoff_pv_to_atc_percentage
+     , round(((add_to_carts-checkouts)/add_to_carts::decimal)*100,2) as dropoff_atc_to_cout_percentage
+FROM
+    final_table
