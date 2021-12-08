@@ -21,14 +21,15 @@ agg_table as (
         bool_table
     GROUP BY  
         session_id
-),
+ ),
+
 final_table as (
     
     SELECT
         count(session_id) as num_sessions
-         , count(case when num_pv > 1 then 1 else 0 end) as page_views
-         , count(case when num_atc > 1 then 1 else 0 end) as add_to_carts
-         , count(case when num_cout > 1 then 1 else 0 end) as checkouts
+         , sum(case when num_pv > 0 then 1 else 0 end) as page_views
+         , sum(case when num_atc > 0 then 1 else 0 end) as add_to_carts
+         , sum(case when num_cout > 0 then 1 else 0 end) as checkouts
     FROM
         agg_table
 )
