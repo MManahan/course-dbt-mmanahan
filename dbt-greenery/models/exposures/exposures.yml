@@ -1,0 +1,15 @@
+exposures:
+  
+  - name: orders_by_product
+    type: dashboard
+    maturity: high
+    url: https://bi.tool/dashboards/1
+    description: >
+      Table providing the total number of orders by product
+    
+    depends_on:
+      - ref('fact_orders_by_product')
+      
+    owner:
+      name: Mer
+      email: mer@mer.com
