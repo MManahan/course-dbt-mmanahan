@@ -1,6 +1,6 @@
 image: corise/dbt-course-gitpod
 tasks:
-  - command: sudo /etc/init.d/postgresql start && mkdir -p /workspace/.dbt && ln -snf /workspace/.dbt ~/.dbt && export PGPASSWORD=corise PGUSER=corise PGDATABASE=dbt && pip3 upgrade -U dbt-core dbt-postgres dbt-redshift
+  - command: sudo /etc/init.d/postgresql start && mkdir -p /workspace/.dbt && ln -snf /workspace/.dbt ~/.dbt && export PGPASSWORD=corise PGUSER=corise PGDATABASE=dbt && pip install --upgrade dbt-core 
 ports:
   - port: 8000
     onOpen: open-preview
