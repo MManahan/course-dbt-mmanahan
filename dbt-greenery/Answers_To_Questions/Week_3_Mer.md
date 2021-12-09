@@ -10,5 +10,5 @@
 
 ## 3 Why might certain products be converting at higher/lower rates than others?
 
-### Some plants maybe be tied to a season of the year. For example Poinsettia's are usually related to Christmas time. I would think it is almost considered a "must buy"
+#### Some plants maybe be tied to a season of the year. For example Poinsettia's are usually related to Christmas time. I would think it is almost considered a "must buy"
 
