@@ -13,7 +13,9 @@ with bool_table as (
          , case when event_type = 'add_to_cart' then 1 else 0 end as has_add_to_cart
          , case when event_type = 'checkout' then 1 else 0 end as has_checkout
     FROM
-    {{ref('stg_events_table')}}
+        {{ref('stg_events_table')}}
+    WHERE
+        event_type in ('page_view','add_to_cart','checkout')
 
 ),
 agg_table as ( 
